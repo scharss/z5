@@ -1,0 +1,37 @@
+input {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+tr.col {
+    visibility: collapse;
+}
+
+.btn-danger {
+    border: none;
+    color: white;
+    padding: 5px 9px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+#contador {
+    margin-top: 20px;
+    padding-right: 10px;
+    padding-left: 0px;
+}
+
+#linkcarrito {
+    color: aliceblue;
+}
+
+.navbar {
+    padding-top: 20px;
+}
+
+#locarrito {
+    padding-right: 25px;
+}

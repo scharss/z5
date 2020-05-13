@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js">
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="index.js"></script>
+
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/mains.scss" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md  sticky-top sticky-offset text-light " style="background-color: black">
+        <a class="navbar-brand" href="../../index.html"><img src="img/logo.png" alt="logo"></a>
+
+        <a href="index.html#carrito" id="linkcarrito">
+            <img src="img/cart.png" alt="cart" id="locarrito">
+        </a>
+
+
+
+        <button class="navbar-toggler bg-light navbar-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Frutas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Verduras</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Pulpas</a>
+                </li>
+
+            </ul>
+
+
+        </div>
+    </nav>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-ms-12 col-md-12 col-lg-12 col-xl-12">
+                <h1><strong> Tienda Online </strong></h1>
+            </div>
+        </div>
+    </div>
+    <br>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
+
+                    <p>
+                        <a href=""><img class="img-fluid z-depth-1" src="img/852x479apple.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
+                    </p>
+                    <p><label>Manzanas</label></P>
+                    <p><label>Precio: $ 1000 unidad</label></P>
+                    <p><label>Unidades a Comprar:</label>
+                        <input type="number" id="cmanzana" value="0" style="width:50px;height:30px"></p>
+
+                    <p><button type="button" class="btn btn-primary" onclick=" validarbtnmanzana(), carritollleno()"> Agregar al Carrito</button></p>
+
+
+                </div>
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
+
+                    <p>
+                        <a href=""><img class="img-fluid z-depth-1" src="img/852x479naranja.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
+                    </p>
+                    <p><label>Naranjas</label></P>
+                    <p><label>Precio: $ 2000 libra</label>
+                        <p><label>Unidades a Comprar:</label>
+                            <input type="number" id="cnaranja" value="0" style="width:50px;height:30px"></p>
+
+                        <p><button type="button" class="btn btn-primary" onclick="validarbtnnaranja()"> Agregar al Carrito</button></p>
+
+                </div>
+                <div class="col-12 col-ms-12 col-md-12 col-lg-4 col-xl-4">
+                    <p>
+                        <a href=""><img class="img-fluid z-depth-1" src="img/852x479uva.png" alt="video" data-toggle="modal" data-target="#modal1"></a>
+                    </p>
+                    <p><label>Uvas</label></P>
+                    <p><label>Precio: $ 1500 libra</label>
+
+                        <p><label>Unidades a Comprar:</label>
+                            <input type="number" id="cuva" value="0" style="width:50px;height:30px"></p>
+                        <p><button type="button" class="btn btn-primary" onclick="validarbtnuva()"> Agregar al Carrito</button></p>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <hr>
+    <section id="carrito">
+        <div class="container">
+            <strong><p> Carrito</p></strong>
+            <div class="row">
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Producto</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Cantidad</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><p>Costo</p></strong>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="cartsection">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="nombremanzana"></p>
+                    <p id="nombrenaranja"></p>
+                    <p id="nombruva"></p>
+                </div>
+
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="totalmanzanas"></p>
+                    <p id="totalnaranjas"></p>
+                    <p id="totaluvas"></p>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="costomanzanas"></p>
+                    <p id="costonaranjas"></p>
+                    <p id="costouvas"></p>
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <p id="borrarmanzanas"></p>
+                    <p id="borrarnaranjas"> </p>
+                    <p id="borraruvas"> </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="total">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+
+                </div>
+                <div class="col-3 col-ms-3 col-md-3 col-lg-3 col-xl-3">
+                    <strong><label>Total</label></strong> <strong><p id="Total"></p></strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--<div class="container">
+        <div class="row">
+            <div class="col-12 col-ms-12 col-md-12 col-lg-12 col-xl-12">
+                <center>
+                    <p id="xxx">aaa</p>
+                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdMW2iNAt3vf99WRj__Da1qNDX5UJwzejga50H11rQFcuKPbQ/formResponse" target="_self" method="POST" id="mG61Hd">
+                        Nombre:<br>
+                        <input type="text" name="entry.2088322111" id="nombrecliente" value="">
+                        <br> Apellido:
+                        <br>
+                        <input type="text" name="entry.821304352" id="quantity">
+                        <br> Celular:
+                        <br>
+                        <input type="text" name="entry.902036427">
+                        <br> email:
+                        <br>
+                        <input type="text" name="entry.2121491588">
+                        <br><br>
+                        <input type="submit" value="Enviar">
+                        <input type="reset" value="Reset">
+                    </form>
+                </center>
+
+
+            </div>
+        </div>
+    </div>-->
+
+    <!--*******************-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <strong><p id="vacio">Carrito Vacío</p></strong>
+
+                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdMW2iNAt3vf99WRj__Da1qNDX5UJwzejga50H11rQFcuKPbQ/formResponse" target="_self" method="POST" id="mG61Hd">
+
+                    <div class="form-group">
+                        <!-- nombre -->
+                        <label for="full_name_id" class="control-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="entry.2088322111" placeholder="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- dirección -->
+                        <label for="street1_id" class="control-label">Dirección</label>
+                        <input type="text" class="form-control" id="dirección" name="entry.821304352" placeholder="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- celular-->
+                        <label for="street2_id" class="control-label">Celular</label>
+                        <input type="text" class="form-control" id="celular" name="entry.902036427" placeholder="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- correo -->
+                        <label for="street2_id" class="control-label">Correo</label>
+                        <input type="text" class="form-control" id="correo" name="entry.2121491588" placeholder="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Numero de manzanas-->
+
+                        <input type="hidden" class="form-control" id="numerodemanzanas" name="entry.2047571991" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <!-- Numero de naranjas-->
+
+                        <input type="hidden" class="form-control" id="numerodenaranjas" name="entry.1342948887" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <!-- Numero de uvas-->
+
+                        <input type="hidden" class="form-control" id="numerodeuvas" name="entry.1789374628" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <!-- orden de compra-->
+
+                        <input type="hidden" class="form-control" id="ordendecompra" name="entry.562770413" placeholder="">
+                    </div>
+
+
+
+                    <div class="form-group ">
+                        <!-- Submit Button -->
+                        <button type="submit " class="btn btn-primary " onclick="alerta() ">Comprar Ahora</button>
+
+
+                        <button type="button" class="btn btn-dark" onclick="restear()">Reset</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--*******************-->
+    <!--<p><button type="button " class="btn btn-primary " onclick="crearusuario(manzana,cmanzana) "> Agregar Usuario</button></p>-->
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js ">
+    </script>
+    <script type="text/javascript " src="index.js "></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js " integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js " integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 " crossorigin="anonymous "></script>
+
+    <div class="footer ">
+        <p>Tienda Online </p>
+        2020
+    </div>
+</body>
+
+</html>
