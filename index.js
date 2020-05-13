@@ -43,6 +43,7 @@ function borrarmanzanas() {
     document.getElementById("costomanzanas").innerHTML = " ";
     document.getElementById("borrarmanzanas").innerHTML = " ";
     document.getElementById("cmanzana").value = 0;
+    document.getElementById("numerodemanzanas").value = 0;
 
 }
 //naranjas
@@ -63,6 +64,7 @@ function borrarnaranjas() {
     document.getElementById("costonaranjas").innerHTML = " ";
     document.getElementById("borrarnaranjas").innerHTML = " ";
     document.getElementById("cnaranja").value = 0;
+    document.getElementById("numerodenaranjas").value = 0;
 
 }
 //Uvas
@@ -83,6 +85,7 @@ function borraruvas() {
     document.getElementById("costouvas").innerHTML = " ";
     document.getElementById("borraruvas").innerHTML = " ";
     document.getElementById("cuva").value = 0;
+    document.getElementById("numerodeuvas").value = 0;
 
 }
 
